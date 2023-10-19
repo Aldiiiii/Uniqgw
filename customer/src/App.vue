@@ -1,7 +1,19 @@
 <script>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
+import Navbar from './views/Navbar.vue'
+
+export default {
+  components: {
+    Navbar
+  },
+  created(){
+    console.log(this.$route)
+  }
+}
 </script>
 
 <template>
+  <Navbar />
+  <!-- <h1 v-if="$route.path !== '/login'">Hallo</h1> -->
   <RouterView />
 </template>
