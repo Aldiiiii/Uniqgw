@@ -1,10 +1,24 @@
 <script>
+import { RouterLink } from 'vue-router'
+import { useUniqgwStore } from '../stores/uniqgw'
+import { mapActions } from 'pinia'
+
 export default {
-    
+  methods: {
+    ...mapActions(useUniqgwStore, ['getLogout']),
+
+    handleLogout(){
+      this.getLogout()
+    }
+  },
+  created(){
+    console.log(this.$route)
+    console.log(localStorage.access_token)
+  }
 }
 </script>
 <template>
-    <header class="navbar navbar-expand-lg bd-navbar sticky-top navbar-dark bg-dark">
+  <header class="navbar navbar-expand-lg bd-navbar sticky-top navbar-dark bg-dark">
     <nav class="container-fluid bd-gutter flex-wrap flex-lg-nowrap">
       <a class="navbar-brand" style="margin-left: 20px" href="#">Uniqgw</a>
       <button
@@ -21,16 +35,19 @@ export default {
       <div class="offcanvas-body p-4 pt-0 p-lg-0" id="navbarNav">
         <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav">
           <li class="nav-item col-6 col-lg-auto active">
-            <a class="nav-link" href="#">Home</a>
+            <RouterLink class="nav-link" to="/">Home</RouterLink>
           </li>
           <li class="nav-item col-6 col-lg-auto">
-            <a class="nav-link" href="#">Products</a>
+            <RouterLink class="nav-link" to="/products">Product</RouterLink>
           </li>
           <li class="nav-item col-6 col-lg-auto">
-            <a class="nav-link" href="#">Login</a>
+            <RouterLink class="nav-link" to="/wishlist">Wishlist</RouterLink>
           </li>
           <li class="nav-item col-6 col-lg-auto">
-            <a class="nav-link disabled" href="#">Logout</a>
+            <RouterLink class="nav-link" to="/login">Login</RouterLink>
+          </li>
+          <li class="nav-item col-6 col-lg-auto">
+            <a class="nav-link" @click.prevent="handleLogout">Logout</a>
           </li>
           <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
             <li>

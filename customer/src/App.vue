@@ -8,6 +8,7 @@ export default {
   },
   created(){
     console.log(this.$route)
+    console.log(localStorage.access_token, `<<<<<<`)
   }
 }
 </script>

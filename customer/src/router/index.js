@@ -4,7 +4,7 @@ import Home from '../views/Home.vue'
 import Register from '../views/Register.vue'
 import Login from '../views/Login.vue'
 import Wishlist from '../views/Wishlist.vue'
-import Card from '../views/Card.vue'
+import Detail from '../views/Detail.vue'
 import Product from '../views/Product.vue'
 
 const router = createRouter({
@@ -12,35 +12,42 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'Home',
       component: Home,
       children: [
         {
           path: 'products',
-          component: Product,
-          children: {
-            path: '',
-            component: Card
-          }
+          component: Product
         }
       ]
     },
     {
       path: '/register',
-      name: 'register',
+      name: 'Register',
       component: Register
     },
     {
       path: '/login',
-      name: 'login',
+      name: 'Login',
       component: Login
     },
     {
       path: '/wishlist',
-      name: 'wishlist',
+      name: 'Wishlist',
       component: Wishlist
+    },
+    {
+      path: '/products/:id',
+      name: 'Detail',
+      component: Detail
     }
   ]
+})
+
+router.beforeEach((to, from, next) => {
+  const isAuthenticated = localStorage.access_token
+  if (to.name === 'Login' && isAuthenticated) next({name: Product})
+  else next()
 })
 
 export default router
