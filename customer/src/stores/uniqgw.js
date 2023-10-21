@@ -7,10 +7,24 @@ export const useUniqgwStore = defineStore('uniqgw', {
       baseUrl: 'http://localhost:3000/pub',
       products: [],
       product: {},
-      wishlists: []
+      wishlists: [],
+      isLoggedIn: false
     }
   },
   actions: {
+    async googleLogin(response){
+        try {
+            const login = await axios.post(this.baseUrl + '/login-google', {}, {
+                headers: {
+                    google_token: response.credential
+                }
+            })
+            localStorage.access_token = login.data.token
+            this.router.push('/')
+        } catch (error) {
+            console.log(error)
+        }
+    },
     async getLogin(data) {
       try {
         const user = await axios.post(this.baseUrl + '/login', data)

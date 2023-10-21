@@ -45,20 +45,6 @@ export default {
 <template>
   <div class="col">
     <div class="card shadow-sm">
-      <!-- <svg
-        class="bd-placeholder-img card-img-top"
-        width="100%"
-        height="225"
-        xmlns="http://www.w3.org/2000/svg"
-        role="img"
-        aria-label="Placeholder: Thumbnail"
-        preserveAspectRatio="xMidYMid slice"
-        focusable="false"
-      >
-        <title>Placeholder</title>
-        <rect width="100%" height="100%" fill="#55595c" />
-        <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-      </svg> -->
       <img :src="imgUrl"
       class="bd-placeholder-img card-img-top"
         
@@ -72,7 +58,7 @@ export default {
         <div class="d-flex justify-content-between align-items-center">
           <div class="btn-group">
             <button @click.prevent="viewDetail(id)" type="button" class="btn btn-sm btn-outline-secondary">View detail</button>
-            <button @click.prevent="handleAddWishlist(id)" type="button" class="btn btn-sm btn-outline-secondary">🤍 Wishlist</button>
+            <button @click.prevent="handleAddWishlist(id)" type="button" class="btn btn-sm btn-outline-secondary">🖤 Wishlist</button>
           </div>
           <small class="text-body-secondary">9 mins</small>
         </div>

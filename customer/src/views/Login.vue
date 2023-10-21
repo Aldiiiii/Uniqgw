@@ -10,8 +10,12 @@ export default {
     }
   },
   methods: {
-    ...mapActions(useUniqgwStore, ['getLogin']),
+    ...mapActions(useUniqgwStore, ['getLogin', 'googleLogin']),
     
+    callback(response){
+      this.googleLogin(response)
+    },
+
     handleSubmit(){
       this.getLogin({email: this.email, password: this.password})
     }
@@ -19,10 +23,10 @@ export default {
   }
 }
 // login google
-// const callback = (response) => {
-//   // This callback will be triggered when the user selects or login to
-//   console.log("Handle the response", response)
-// }
+const callback = (response) => {
+  // This callback will be triggered when the user selects or login to
+  console.log("Handle the response", response)
+}
 </script>
 
 <template>
@@ -77,8 +81,10 @@ export default {
           <label for="floatingPassword">Password</label>
         </div>
 
-        <button class="btn btn-dark w-100 py-2" type="submit">Sign in</button>
-        <!-- <GoogleLogin :callback="callback"/> -->
+        <button class="btn btn-dark w-100 py-2" type="submit">Sign in</button>        
+        <div style="display: flex; justify-content: center; margin-left: 18px;">
+          <GoogleLogin class="btn w-100 py-2" :callback="callback"/>
+        </div>
         <p class="mt-5 mb-3 text-body-secondary">&copy; 2023</p>
       </form>
     </main>
