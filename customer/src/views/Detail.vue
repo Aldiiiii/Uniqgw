@@ -16,8 +16,8 @@ export default {
 </script>
 <template>
   <div class="justify-content-center" style="display: flex; max-height: 90vh;">
-    <div class="card mb-3 mt-5" style="max-width: 85vw; display: flex; align-items: center;">
-      <div class="row g-0">
+    <div class="card mb-3 mt-5" style="width: 85vw; display: flex; align-items: center;">
+      <div class="row g-0" style="width: 85vw;">
         <div class="col-md-4">
           <img :src="product.imgUrl" class="img-fluid rounded-start" style="height: fit-content;" alt="...">
         </div>

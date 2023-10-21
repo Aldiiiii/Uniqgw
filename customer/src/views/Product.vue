@@ -4,11 +4,6 @@ import { mapState, mapActions } from 'pinia';
 import { useUniqgwStore } from '../stores/uniqgw';
 
 export default {
-  data(){
-    return {
-
-    }
-  },
   components: {
     Card
   },
@@ -16,7 +11,7 @@ export default {
     ...mapState(useUniqgwStore, ['products'])
   },
   methods: {
-    ...mapActions(useUniqgwStore, ['fetchProducts'])
+    ...mapActions(useUniqgwStore, ['fetchProducts', 'fetchWishlist'])
   },
   beforeMount(){
     this.fetchProducts()
@@ -31,7 +26,7 @@ export default {
         <!-- cards -->
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-          <Card v-for="item in products" :key="item.id" :item="item" />  
+          <Card v-if="this.$route.path === '/products'" v-for="item in products" :key="item.id" :item="item" />  
           
         </div>
 

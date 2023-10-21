@@ -9,8 +9,8 @@ export default {
     Navbar
   },
   created(){
-    console.log(this.$route)
-    console.log(localStorage.access_token, `<<<<<<`)
+    // console.log(this.$route)
+    // console.log(localStorage.access_token, `<<<<<<`)
   }
 }
 </script>
