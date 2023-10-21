@@ -4,16 +4,17 @@ import { useUniqgwStore } from '../stores/uniqgw'
 import { mapActions } from 'pinia'
 
 export default {
+  data(){
+    return {
+      isLogin: false
+    }
+  },
   methods: {
     ...mapActions(useUniqgwStore, ['getLogout']),
 
     handleLogout(){
       this.getLogout()
     }
-  },
-  created(){
-    console.log(this.$route)
-    console.log(localStorage.access_token)
   }
 }
 </script>

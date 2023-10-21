@@ -1,9 +1,21 @@
-<script></script>
+<script>
+import { RouterLink } from 'vue-router';
+
+export default {
+    props: ['item'],
+    components: { RouterLink },
+    methods: {
+      viewDetail(id){
+        this.$router.push('/products/' + id)
+      }
+    }
+}
+</script>
 
 <template>
   <div class="col">
     <div class="card shadow-sm">
-      <svg
+      <!-- <svg
         class="bd-placeholder-img card-img-top"
         width="100%"
         height="225"
@@ -16,15 +28,20 @@
         <title>Placeholder</title>
         <rect width="100%" height="100%" fill="#55595c" />
         <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-      </svg>
+      </svg> -->
+      <img :src="item.imgUrl"
+      class="bd-placeholder-img card-img-top"
+        
+      />
       <div class="card-body">
+        <strong>{{ item.name }}</strong>
+        <p class="card-text"><small class="text-body-secondary">{{item.Category.name}}</small></p>
         <p class="card-text">
-          This is a wider card with supporting text below as a natural lead-in to additional
-          content. This content is a little bit longer.
+          Rp.{{ item.price }}
         </p>
         <div class="d-flex justify-content-between align-items-center">
           <div class="btn-group">
-            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+            <button @click.prevent="viewDetail(item.id)" item.id type="button" class="btn btn-sm btn-outline-secondary">View</button>
             <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
           </div>
           <small class="text-body-secondary">9 mins</small>

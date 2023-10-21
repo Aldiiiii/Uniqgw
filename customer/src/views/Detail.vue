@@ -1,15 +1,37 @@
+<script>
+import { mapActions, mapState } from 'pinia'
+import { useUniqgwStore } from '../stores/uniqgw'
+
+export default {
+  methods: {
+    ...mapActions(useUniqgwStore, ['productById'])
+  },
+  computed: {
+    ...mapState(useUniqgwStore, ['product'])
+  },
+  beforeMount() {
+    this.productById(this.$route.params.id)
+  }
+}
+</script>
 <template>
-  <div class="justify-content-center col-6 mt-4" style="display: flex; height: 85vh; width: 100vw;">
-    <div class="card mb-3">
-    <img src="..." class="card-img-top rounded text-center mt-3" alt="Cannot load image" />
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">
-        This is a wider card with supporting text below as a natural lead-in to additional content.
-        This content is a little bit longer.
-      </p>
-      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+  <div class="justify-content-center" style="display: flex; max-height: 90vh;">
+    <div class="card mb-3 mt-5" style="max-width: 85vw; display: flex; align-items: center;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img :src="product.imgUrl" class="img-fluid rounded-start" style="height: fit-content;" alt="...">
+        </div>
+        <div class="col-md-8" style="display: flex; align-items: center;">
+          <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <hr>
+            <p class="card-text">{{product.description}}</p>
+            <p class="card-text">Stock: {{product.stock}}</p>
+            <p class="card-text">Rp. {{product.price}}</p>
+            <p class="card-text"><small class="text-body-secondary">{{product.Category.name}}</small></p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
   </div>
 </template>

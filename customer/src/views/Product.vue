@@ -1,9 +1,25 @@
 <script>
-import Card from './Card.vue'
+import Card from '../components/Card.vue'
+import { mapState, mapActions } from 'pinia';
+import { useUniqgwStore } from '../stores/uniqgw';
 
 export default {
+  data(){
+    return {
+
+    }
+  },
   components: {
     Card
+  },
+  computed: {
+    ...mapState(useUniqgwStore, ['products'])
+  },
+  methods: {
+    ...mapActions(useUniqgwStore, ['fetchProducts'])
+  },
+  beforeMount(){
+    this.fetchProducts()
   }
 }
 </script>
@@ -15,7 +31,7 @@ export default {
         <!-- cards -->
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-          <Card />  
+          <Card v-for="item in products" :key="item.id" :item="item" />  
           
         </div>
 

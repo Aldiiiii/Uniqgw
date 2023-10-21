@@ -1,6 +1,8 @@
 <script>
 import { RouterView } from 'vue-router'
-import Navbar from './views/Navbar.vue'
+import Navbar from './components/Navbar.vue'
+import { mapActions } from 'pinia'
+import { useUniqgwStore } from './stores/uniqgw'
 
 export default {
   components: {
