@@ -24,17 +24,33 @@ const router = createRouter({
     {
       path: '/register',
       name: 'Register',
-      component: Register
+      component: Register,
+      beforeEnter: () => {
+        if(localStorage.access_token){
+          return false
+        }
+      }
     },
     {
       path: '/login',
       name: 'Login',
-      component: Login
+      component: Login,
+      beforeEnter: () => {
+          if(localStorage.access_token){
+            return false
+          }
+        }
+      
     },
     {
       path: '/wishlist',
       name: 'Wishlist',
-      component: Wishlist
+      component: Wishlist,
+      beforeEnter: () => {
+        if(!localStorage.access_token){
+          return false
+        }
+      }
     },
     {
       path: '/products/:id',
@@ -43,12 +59,5 @@ const router = createRouter({
     }
   ]
 })
-
-// router.beforeEach((to, from, next) => {
-//   const isAuthenticated = localStorage.access_token
-//   if (to.name === 'Login' && isAuthenticated) this.$router.push('/products')
-//   else next()
-// })
-
 
 export default router

@@ -14,6 +14,15 @@ export const useUniqgwStore = defineStore('uniqgw', {
     }
   },
   actions: {
+    async register(data){
+        try {
+            const signUp = await axios.post(this.baseUrl + '/register', data)
+            localStorage.access_token = signUp.data.token
+            this.router.push('/')          
+        } catch (error) {
+            console.log(error)
+        }
+    },
     async googleLogin(response){
         try {
             const login = await axios.post(this.baseUrl + '/login-google', {}, {
@@ -42,17 +51,16 @@ export const useUniqgwStore = defineStore('uniqgw', {
     },
     async fetchProducts(query) {
       try {
-
-        console.log(query, `<<query`)
         let addQuery = ''
+
         query.page ? addQuery = 'page=' + query.page : ''
         query.name ? addQuery = 'name=' + query.name : ''
         if(query.page && query.name){
             addQuery = 'page='+ query.page + '&name=' + query.name
         }
-        console.log(addQuery, `<<<ADD QUERY`)
+
         const {data} = await axios.get(this.baseUrl + '/products?' + addQuery)
-        console.log(data.products)
+
         this.products = data.products
         this.totalPages = data.totalPages
         this.currentPage = data.currentPage

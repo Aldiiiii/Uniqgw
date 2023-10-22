@@ -57,7 +57,7 @@ export default {
         <div class="d-flex justify-content-between align-items-center">
           <div class="btn-group">
             <button @click.prevent="viewDetail(id)" type="button" class="btn btn-sm btn-outline-secondary">View detail</button>
-            <button @click.prevent="handleAddWishlist(id)" type="button" class="btn btn-sm btn-outline-secondary">🖤 Wishlist</button>
+            <button v-if="this.$route.path !== '/wishlist'" @click.prevent="handleAddWishlist(id)" type="button" class="btn btn-sm btn-outline-secondary">🖤 Wishlist</button>
           </div>
           <small class="text-body-secondary">Uniqgw</small>
         </div>

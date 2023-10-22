@@ -6,7 +6,6 @@ import { mapActions } from 'pinia'
 export default {
   data(){
     return {
-      isLogin: false,
       searchName: ''
     }
   },
@@ -17,10 +16,6 @@ export default {
         this.$router.push('/products?name=' + this.searchName)
         this.fetchProducts({name: this.searchName})
     },
-
-    handleLogout(){
-      this.getLogout()
-    }
   }
 }
 </script>
@@ -54,7 +49,10 @@ export default {
             <RouterLink class="nav-link" to="/login">Login</RouterLink>
           </li>
           <li class="nav-item col-6 col-lg-auto">
-            <a class="nav-link" @click.prevent="handleLogout">Logout</a>
+            <RouterLink class="nav-link" to="/register">Register</RouterLink>
+          </li>
+          <li class="nav-item col-6 col-lg-auto">
+            <a class="nav-link" @click.prevent="getLogout">Logout</a>
           </li>
           <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
             <li>

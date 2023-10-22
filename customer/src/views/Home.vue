@@ -1,7 +1,6 @@
 <script>
 import { RouterLink, RouterView } from 'vue-router';
 
-export default { components: { RouterLink } }
 </script>
 
 <template>
@@ -18,7 +17,9 @@ export default { components: { RouterLink } }
           </p>
           <p>
             <RouterLink to="/products" class="btn btn-dark my-2">Products</RouterLink>
-            <a href="#" class="btn btn-light my-2">Login</a>
+            <span>
+              <RouterLink to="/login" class="btn btn-light my-2">Login</RouterLink>
+            </span>              
           </p>
         </div>
       </div>
