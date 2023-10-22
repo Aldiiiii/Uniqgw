@@ -9,7 +9,7 @@ export default {
     Navbar
   },
   created(){
-    // console.log(this.$route)
+    console.log(this.$route.query, `<<<<<INI DI APP VUE`)
     // console.log(localStorage.access_token, `<<<<<<`)
   }
 }

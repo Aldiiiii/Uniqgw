@@ -10,7 +10,7 @@ export default {
         imgUrl: '',
         CategoryName: '',
         id: '',
-        price: ''
+        price: '',
       }
     },
     methods: {
@@ -23,8 +23,7 @@ export default {
         this.addWishlist(productId)
       }
     },
-    mounted(){
-      console.log('haiiii', this.item)
+    created(){
       if(this.$route.path === '/wishlist') {
         this.name = this.wishlist.Product.name
         this.imgUrl = this.wishlist.Product.imgUrl
@@ -60,7 +59,7 @@ export default {
             <button @click.prevent="viewDetail(id)" type="button" class="btn btn-sm btn-outline-secondary">View detail</button>
             <button @click.prevent="handleAddWishlist(id)" type="button" class="btn btn-sm btn-outline-secondary">🖤 Wishlist</button>
           </div>
-          <small class="text-body-secondary">9 mins</small>
+          <small class="text-body-secondary">Uniqgw</small>
         </div>
       </div>
     </div>

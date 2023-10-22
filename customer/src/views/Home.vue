@@ -30,7 +30,7 @@ export default { components: { RouterLink } }
 
   <footer class="text-body-secondary py-5">
     <div class="container">
-      <p class="float-end mb-1">
+      <p class="float-end mb-1" v-if="this.$route.path !== '/'">
         <a href="#">Back to top</a>
       </p>
       <p class="mb-1">

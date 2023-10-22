@@ -6,11 +6,17 @@ import { mapActions } from 'pinia'
 export default {
   data(){
     return {
-      isLogin: false
+      isLogin: false,
+      searchName: ''
     }
   },
   methods: {
-    ...mapActions(useUniqgwStore, ['getLogout']),
+    ...mapActions(useUniqgwStore, ['getLogout','fetchProducts']),
+
+    handleSearch(){
+        this.$router.push('/products?name=' + this.searchName)
+        this.fetchProducts({name: this.searchName})
+    },
 
     handleLogout(){
       this.getLogout()
@@ -52,8 +58,9 @@ export default {
           </li>
           <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
             <li>
-              <form class="form-inline" style="display: flex; gap: 10px">
+              <form @submit.prevent="handleSearch" class="form-inline" style="display: flex; gap: 10px">
                 <input
+                  v-model="searchName"
                   class="form-control mr-sm-2"
                   type="search"
                   placeholder="Search"

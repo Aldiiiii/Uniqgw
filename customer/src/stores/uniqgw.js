@@ -8,6 +8,8 @@ export const useUniqgwStore = defineStore('uniqgw', {
       products: [],
       product: {},
       wishlists: [],
+      totalPages: 0,
+      currentPage: 0,
       isLoggedIn: false
     }
   },
@@ -38,10 +40,22 @@ export const useUniqgwStore = defineStore('uniqgw', {
       localStorage.clear()
       this.router.push('/login')
     },
-    async fetchProducts() {
+    async fetchProducts(query) {
       try {
-        const { data } = await axios.get(this.baseUrl + '/products')
-        this.products = data.rows
+
+        console.log(query, `<<query`)
+        let addQuery = ''
+        query.page ? addQuery = 'page=' + query.page : ''
+        query.name ? addQuery = 'name=' + query.name : ''
+        if(query.page && query.name){
+            addQuery = 'page='+ query.page + '&name=' + query.name
+        }
+        console.log(addQuery, `<<<ADD QUERY`)
+        const {data} = await axios.get(this.baseUrl + '/products?' + addQuery)
+        console.log(data.products)
+        this.products = data.products
+        this.totalPages = data.totalPages
+        this.currentPage = data.currentPage
       } catch (error) {
         console.log(error)
       }
