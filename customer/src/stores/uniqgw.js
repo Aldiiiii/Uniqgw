@@ -1,5 +1,8 @@
 import { defineStore } from 'pinia'
 import axios from 'axios'
+import {useToast} from 'vue-toast-notification';
+import 'vue-toast-notification/dist/theme-sugar.css'
+
 
 export const useUniqgwStore = defineStore('uniqgw', {
   state() {
@@ -10,6 +13,7 @@ export const useUniqgwStore = defineStore('uniqgw', {
       wishlists: [],
       totalPages: 0,
       currentPage: 0,
+      qrCode: '',
       isLoggedIn: false
     }
   },
@@ -32,6 +36,7 @@ export const useUniqgwStore = defineStore('uniqgw', {
             })
             localStorage.access_token = login.data.token
             this.router.push('/')
+            this.$toast.success("Login Success")
         } catch (error) {
             console.log(error)
         }
@@ -41,13 +46,17 @@ export const useUniqgwStore = defineStore('uniqgw', {
         const user = await axios.post(this.baseUrl + '/login', data)
         localStorage.access_token = user.data.token
         this.router.push('/')
+        const toast = useToast()
+        toast.success("Login Success")
       } catch (error) {
-        console.log(error)
+        const toast = useToast()
+        toast.error("error")
       }
     },
     getLogout() {
       localStorage.clear()
       this.router.push('/login')
+      this.$toast.success("Logout Success")
     },
     async fetchProducts(query) {
       try {
@@ -101,8 +110,17 @@ export const useUniqgwStore = defineStore('uniqgw', {
                     access_token: localStorage.access_token
                 }
             })
-            console.log(data)
             this.wishlists = data
+        } catch (error) {
+            console.log(error)
+        }
+    },
+    async getQrCode(urlDetail){
+        try {
+            const { data } = await axios.post(this.baseUrl + '/products/:id', {
+                urlDetail
+            })
+            this.qrCode = data
         } catch (error) {
             console.log(error)
         }
