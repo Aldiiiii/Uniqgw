@@ -7,7 +7,7 @@ import 'vue-toast-notification/dist/theme-sugar.css'
 export const useUniqgwStore = defineStore('uniqgw', {
   state() {
     return {
-      baseUrl: 'http://localhost:3000/pub',
+      baseUrl: 'https://toko.amrinaldi.site/pub',
       products: [],
       product: {},
       wishlists: [],
