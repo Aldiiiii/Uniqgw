@@ -7,7 +7,6 @@ import vue3GoogleLogin from 'vue3-google-login'
 import ToastPlugin from 'vue-toast-notification';
 import 'vue-toast-notification/dist/theme-bootstrap.css';
 
-
 const app = createApp(App)
 
 const pinia = createPinia()
