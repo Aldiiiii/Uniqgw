@@ -1,0 +1,118 @@
+[    
+    {
+        "name": "Product 8",
+        "description": "This is Product 8",
+        "price": 100000,
+        "stock": 50,
+        "imgUrl": "https://media.loropiana.com/HYBRIS/FAF/FAF6128/9DB87B48-C051-40E1-8484-D80E73B5D2DA/FAF6128_1005_MEDIUM.jpg",
+        "categoryId": 1,
+        "authorId": 1
+    },
+    {
+        "name": "Product 9",
+        "description": "This is Product 9",
+        "price": 200000,
+        "stock": 40,
+        "imgUrl": "https://media.loropiana.com/HYBRIS/FAF/FAF6128/9DB87B48-C051-40E1-8484-D80E73B5D2DA/FAF6128_1005_MEDIUM.jpg",
+        "categoryId": 2,
+        "authorId": 1
+    },
+    {
+        "name": "Product 10",
+        "description": "This is product 10",
+        "price": 300000,
+        "stock": 30,
+        "imgUrl": "https://media.loropiana.com/HYBRIS/FAF/FAF6128/9DB87B48-C051-40E1-8484-D80E73B5D2DA/FAF6128_1005_MEDIUM.jpg",
+        "categoryId": 3,
+        "authorId": 1
+    },
+    {
+        "name": "Product 11",
+        "description": "This is product 11",
+        "price": 400000,
+        "stock": 20,
+        "imgUrl": "https://media.loropiana.com/HYBRIS/FAF/FAF6128/9DB87B48-C051-40E1-8484-D80E73B5D2DA/FAF6128_1005_MEDIUM.jpg",
+        "categoryId": 4,
+        "authorId": 2
+    },
+    {
+        "name": "Product 12",
+        "description": "This is product 12",
+        "price": 500000,
+        "stock": 10,
+        "imgUrl": "https://media.loropiana.com/HYBRIS/FAF/FAF6128/9DB87B48-C051-40E1-8484-D80E73B5D2DA/FAF6128_1005_MEDIUM.jpg",
+        "categoryId": 5,
+        "authorId": 2
+    },
+    {
+        "name": "Product 13",
+        "description": "This is product 13",
+        "price": 600000,
+        "stock": 5,
+        "imgUrl": "https://media.loropiana.com/HYBRIS/FAF/FAF6128/9DB87B48-C051-40E1-8484-D80E73B5D2DA/FAF6128_1005_MEDIUM.jpg",
+        "categoryId": 1,
+        "authorId": 2
+    },
+    {
+        "name": "Product 14",
+        "description": "This is product 14",
+        "price": 100000,
+        "stock": 50,
+        "imgUrl": "https://media.loropiana.com/HYBRIS/FAF/FAF6128/9DB87B48-C051-40E1-8484-D80E73B5D2DA/FAF6128_1005_MEDIUM.jpg",
+        "categoryId": 1,
+        "authorId": 1
+    },
+    {
+        "name": "Product 15",
+        "description": "This is product 15",
+        "price": 200000,
+        "stock": 40,
+        "imgUrl": "https://media.loropiana.com/HYBRIS/FAF/FAF6128/9DB87B48-C051-40E1-8484-D80E73B5D2DA/FAF6128_1005_MEDIUM.jpg",
+        "categoryId": 2,
+        "authorId": 1
+    },
+    {
+        "name": "Product 16",
+        "description": "This is product 16",
+        "price": 300000,
+        "stock": 30,
+        "imgUrl": "https://media.loropiana.com/HYBRIS/FAF/FAF6128/9DB87B48-C051-40E1-8484-D80E73B5D2DA/FAF6128_1005_MEDIUM.jpg",
+        "categoryId": 3,
+        "authorId": 1
+    },
+    {
+        "name": "Product 17",
+        "description": "This is product 17",
+        "price": 400000,
+        "stock": 20,
+        "imgUrl": "https://media.loropiana.com/HYBRIS/FAF/FAF6128/9DB87B48-C051-40E1-8484-D80E73B5D2DA/FAF6128_1005_MEDIUM.jpg",
+        "categoryId": 4,
+        "authorId": 2
+    },
+    {
+        "name": "Product 18",
+        "description": "This is product 18",
+        "price": 500000,
+        "stock": 10,
+        "imgUrl": "https://media.loropiana.com/HYBRIS/FAF/FAF6128/9DB87B48-C051-40E1-8484-D80E73B5D2DA/FAF6128_1005_MEDIUM.jpg",
+        "categoryId": 5,
+        "authorId": 2
+    },
+    {
+        "name": "Product 19",
+        "description": "This is product 19",
+        "price": 600000,
+        "stock": 2,
+        "imgUrl": "https://media.loropiana.com/HYBRIS/FAF/FAF6128/9DB87B48-C051-40E1-8484-D80E73B5D2DA/FAF6128_1005_MEDIUM.jpg",
+        "categoryId": 1,
+        "authorId": 2
+    },{
+        "name": "Product 10",
+        "description": "This is product 20",
+        "price": 600000,
+        "stock": 4,
+        "imgUrl": "https://media.loropiana.com/HYBRIS/FAF/FAF6128/9DB87B48-C051-40E1-8484-D80E73B5D2DA/FAF6128_1005_MEDIUM.jpg",
+        "categoryId": 1,
+        "authorId": 2
+    }
+]

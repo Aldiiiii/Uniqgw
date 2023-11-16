@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Product 1",
+        "description": "This is product 1",
+        "price": 100000,
+        "stock": 50,
+        "imgUrl": "https://media.loropiana.com/HYBRIS/FAF/FAF6128/9DB87B48-C051-40E1-8484-D80E73B5D2DA/FAF6128_1005_MEDIUM.jpg",
+        "categoryId": 1,
+        "authorId": 1
+    },
+    {
+        "name": "Product 2",
+        "description": "This is product 2",
+        "price": 200000,
+        "stock": 40,
+        "imgUrl": "https://media.loropiana.com/HYBRIS/FAF/FAF6128/9DB87B48-C051-40E1-8484-D80E73B5D2DA/FAF6128_1005_MEDIUM.jpg",
+        "categoryId": 2,
+        "authorId": 1
+    },
+    {
+        "name": "Product 3",
+        "description": "This is product 3",
+        "price": 300000,
+        "stock": 30,
+        "imgUrl": "https://media.loropiana.com/HYBRIS/FAF/FAF6128/9DB87B48-C051-40E1-8484-D80E73B5D2DA/FAF6128_1005_MEDIUM.jpg",
+        "categoryId": 3,
+        "authorId": 1
+    },
+    {
+        "name": "Product 4",
+        "description": "This is product 4",
+        "price": 400000,
+        "stock": 20,
+        "imgUrl": "https://media.loropiana.com/HYBRIS/FAF/FAF6128/9DB87B48-C051-40E1-8484-D80E73B5D2DA/FAF6128_1005_MEDIUM.jpg",
+        "categoryId": 4,
+        "authorId": 2
+    },
+    {
+        "name": "Product 5",
+        "description": "This is product 5",
+        "price": 500000,
+        "stock": 10,
+        "imgUrl": "https://media.loropiana.com/HYBRIS/FAF/FAF6128/9DB87B48-C051-40E1-8484-D80E73B5D2DA/FAF6128_1005_MEDIUM.jpg",
+        "categoryId": 5,
+        "authorId": 2
+    },
+    {
+        "name": "Product 6",
+        "description": "This is product 6",
+        "price": 600000,
+        "stock": 0,
+        "imgUrl": "https://media.loropiana.com/HYBRIS/FAF/FAF6128/9DB87B48-C051-40E1-8484-D80E73B5D2DA/FAF6128_1005_MEDIUM.jpg",
+        "categoryId": 1,
+        "authorId": 2
+    }
+]

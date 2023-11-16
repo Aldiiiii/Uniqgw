@@ -7,8 +7,8 @@ const toast = useToast()
 export const useUniqgwStore = defineStore('uniqgw', {
   state() {
     return {
-      baseUrl: 'https://toko.amrinaldi.site/pub',
-    //   baseUrl: 'http://localhost:3000/pub',
+    //   baseUrl: 'https://toko.amrinaldi.site/pub',
+      baseUrl: 'http://localhost:3000/pub',
       products: [],
       product: {},
       wishlists: [],

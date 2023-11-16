@@ -1,0 +1,18 @@
+[
+    {
+        "username": "aldi",
+        "email": "aldi@email.com",
+        "password": "12345",
+        "role": "Admin",
+        "phoneNumber": "+621234567890",
+        "address": "Surabaya"
+    },
+    {
+        "username": "rizki",
+        "email": "rizki@email.com",
+        "password": "12345",
+        "role": "Staff",
+        "phoneNumber": "+620987654321",
+        "address": "Solo"
+    }
+]
